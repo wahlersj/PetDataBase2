@@ -39,3 +39,29 @@ public class runPetDatabase {
 
     sc.close();
   }
+
+    private static void displayAllPets() {
+    //header
+    System.out.println("+--------------------------------------+");
+    System.out.printf(
+      "|%5s%5s%9s%10s%5s%5s\n",
+      "ID",
+      "|",
+      "NAME",
+      "|",
+      "AGE",
+      "|"
+    );
+    System.out.println("+--------------------------------------+");
+
+    //setting parameters for rows
+    int i = 0;
+    for (Pet pet : pets) {
+      System.out.printf("|%5d%5s", i, pet.toString());
+      i++;
+    }
+
+    //is how the footer will display
+    System.out.println("+--------------------------------------+");
+    System.out.println((i) + " rows in set.");
+  }
