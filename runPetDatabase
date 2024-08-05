@@ -9,9 +9,9 @@ public class runPetDatabase {
   //Array of pets
   static ArrayList<Pet> pets;
 
-  //main method
+  //Main method
   public static void main(String[] args) {
-    //accept new pet
+    //Accepting a new pet
     Scanner sc = new Scanner(System.in);
     pets = new ArrayList<>();
 
