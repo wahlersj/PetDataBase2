@@ -4,3 +4,16 @@ CSC 422 - Software Engineering
 Assignment 2
 */
 
+public class runPetDatabase {
+
+  //Array of pets
+  static ArrayList<Pet> pets;
+
+  //main method
+  public static void main(String[] args) {
+    //accept new pet
+    Scanner sc = new Scanner(System.in);
+    pets = new ArrayList<>();
+
+    petList(pets, "petList.txt");
+    int choice;
