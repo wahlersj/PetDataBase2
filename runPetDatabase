@@ -17,3 +17,25 @@ public class runPetDatabase {
 
     petList(pets, "petList.txt");
     int choice;
+
+    do {
+      menu();
+      System.out.print("Choose one of the following: ");
+
+      choice = sc.nextInt();
+      sc.nextLine();
+
+      switch (choice) {
+        case 1 -> displayAllPets();
+        case 2 -> addPets(pets, sc);
+        case 3 -> searchName(sc);
+        case 4 -> searchAge(sc);
+        case 5 -> updatePetInfo(sc);
+        case 6 -> removePet(sc);
+        case 7 -> System.out.println("Thank you for using the Pet Database!");
+        default -> System.out.println("Invalid choice!");
+      }
+    } while (choice != 5);
+
+    sc.close();
+  }
