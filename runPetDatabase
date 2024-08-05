@@ -65,3 +65,42 @@ public class runPetDatabase {
     System.out.println("+--------------------------------------+");
     System.out.println((i) + " rows in set.");
   }
+    private static void addPets(ArrayList<Pet> pets, Scanner sc) {
+    int count = 0;
+    String petStr = "";
+
+    do {
+      System.out.print(
+        "add pet (name, age) or type done to return to main menu: "
+      );
+      String input;
+      input = sc.nextLine();
+      String[] data = input.split("\\s+");
+      try {
+        if (petStr.equalsIgnoreCase("done")) {
+          break;
+        }
+
+        int age = Integer.parseInt(input.split("\\s+")[1]);
+        //test for valid age
+
+        if (age < 1 || age > 20) {
+          System.out.println("Error: age is not within valid range.");
+        } else {
+          Pet p = new Pet(data[0], age);
+          if (pets.size() < 5) {
+            pets.add(p);
+          } else {
+            System.out.println("Error: Database is full");
+            break;
+          }
+        }
+      } catch (Exception e) {
+        System.out.println("Error: " + input + " is not valid");
+      }
+      //pets.add(new Pet(data[0], age));
+      count++;
+    } while (!petStr.equalsIgnoreCase("done"));
+
+    System.out.println(count + " pets added.");
+  }
