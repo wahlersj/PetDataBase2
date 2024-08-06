@@ -1,0 +1,12 @@
+/*
+Jacob Wahlers
+CSC 422 - Software Engineering
+Assignment 2
+*/
+
+//creating the pet list with ages
+Kitty, 7
+Mikey, 15
+Blue, 4
+Fido, 3
+Hunter, 18
